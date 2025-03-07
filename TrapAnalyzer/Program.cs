@@ -50,7 +50,7 @@ namespace TrapAnalyzer
         /// <returns>Wether the player survived the trap or not.</returns>
 
         //TRAP TYPE
-        private static bool CanSurviveTrap(TrapType trap, PlayerGear gear)
+        private static bool CanSurviveTrap(string[ ] args)
         {
             switch (trap)
             {
@@ -71,13 +71,12 @@ namespace TrapAnalyzer
         /// <param name="trap">The trap the player has fallen into.</param>
 
         //SURVIVES
-        private static void DisplayResult(TrapType trap, bool survives)
+        private static void DisplayResult(string [] arg)
         {
-            if 
-                case DisplayResult.Dies:
+            if (PlayerGear < TrapType)
                     Console.WriteLine($"Player dies due to {trap}");
                     break;
-                case DisplayResult.PlayerSurvives:
+            if (PlayerGear > TrapType)
                     Console.WriteLine($"Player survives {trap}");
                     break;
                 
