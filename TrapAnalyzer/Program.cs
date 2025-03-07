@@ -30,21 +30,15 @@ namespace TrapAnalyzer
         private static PlayerGear ParseGear(string[] args)
         {
             //Gear available
-            PlayerGear playerGear = PlayerGear.Helmet | PlayerGear.Shield | PlayerGear.Boots;
-
-            foreach (PlayerGear gear in Enum.GetValues(typeof(PlayerGear)))
+            switch (gear)
             {
-                playerGear &= gear;
+                case PlayerGear.Helmet:
+                    return Helmet = 2;
+                case PlayerGear.Shield:
+                    return Shield = 3;
+                case PlayerGear.Boots:
+                    return Boots = 4;
             }
-            foreach (string arg in args.ToList().Slice(1, args.ToList().Count-1))
-            {
-                PlayerGear gear = Enum.Parse<PlayerGear>(arg);
-                if (gear != PlayerGear.None)
-                {
-                    playerGear ^= gear;
-                }
-            }
-            return playerGear;
         }
         }
 
@@ -61,18 +55,16 @@ namespace TrapAnalyzer
             switch (trap)
             {
                 case TrapType.FallingRocks:
-                    return int rock = 1
+                    return rock = 1;
                 case TrapType.SpinningBlades:
-                    return int blades = 2
+                    return blades = 2;
                 case TrapType.PoisonGas:
-                    return int poison = 3
+                    return poison = 3;
                 case TrapType.LavaPit:
-                    return int lava = 4
+                    return lava = 4;
             }   
         }
         }
-        
-
         /// <summary>
         /// Display information on wether the player survived the trap or not.
         /// </summary>
@@ -81,16 +73,15 @@ namespace TrapAnalyzer
         //SURVIVES
         private static void DisplayResult(TrapType trap, bool survives)
         {
-            switch (result)
-            {
-                case GameStatus.Dies:
+            if 
+                case DisplayResult.Dies:
                     Console.WriteLine($"Player dies due to {trap}");
                     break;
-                case GameStatus.PlayerSurvives:
+                case DisplayResult.PlayerSurvives:
                     Console.WriteLine($"Player survives {trap}");
                     break;
                 
         }
     
-}
+
 
