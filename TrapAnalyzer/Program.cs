@@ -1,4 +1,5 @@
 ﻿using System;
+using TrapAnalyzer;
 
 namespace TrapAnalyzer
 {
@@ -23,11 +24,13 @@ namespace TrapAnalyzer
         /// </summary>
         /// <param name="args">The command line arguments.</param>
         /// <returns>The player gear.</returns>
+        /// 
+
+        //PLAYER GEAR
         private static PlayerGear ParseGear(string[] args)
         {
-            // ////////// //
-            // CHANGE ME! //
-            // ////////// //
+            
+        }
         }
 
         /// <summary>
@@ -36,22 +39,38 @@ namespace TrapAnalyzer
         /// <param name="trap">The trap the player falls into.</param>
         /// <param name="gear">The gear the player has.</param>
         /// <returns>Wether the player survived the trap or not.</returns>
+
+        //TRAP TYPE
         private static bool CanSurviveTrap(TrapType trap, PlayerGear gear)
         {
-            // ////////// //
-            // CHANGE ME! //
-            // ////////// //
+                if (gear < trap)
+                {
+                    return GameStatus.Dies; //Dies 
+                }
+                if (gear > trap)
+                {
+                    return GameStatus.Survives; // Player Survives
+                }
         }
+        
 
         /// <summary>
         /// Display information on wether the player survived the trap or not.
         /// </summary>
         /// <param name="trap">The trap the player has fallen into.</param>
+
+        //SURVIVES
         private static void DisplayResult(TrapType trap, bool survives)
         {
-            // ////////// //
-            // CHANGE ME! //
-            // ////////// //
+            switch (result)
+            {
+                case GameStatus.Dies:
+                    Console.WriteLine($"Player dies due to {trap}");
+                    break;
+                case GameStatus.PlayerSurvives:
+                    Console.WriteLine($"Player survives {trap}");
+                    break;
+                
         }
-    }
+    
 }
