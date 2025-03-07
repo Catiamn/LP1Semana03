@@ -18,12 +18,7 @@ namespace RightSize
                 {
                 Console.WriteLine(s);
                 }
-
             }
-
-
-{
-C o
         }
     }
 }
