@@ -35,10 +35,7 @@ namespace ArrayMul
                 }
                 //resultado alinhado à direita por 7 posições e com duas casas decimais 
                 Console.WriteLine($"| {result,7:f2} |");
-
-
-
-
+            }
         }
     }
 }
